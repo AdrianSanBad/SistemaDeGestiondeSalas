@@ -12,8 +12,9 @@ def eliminarSala(id_sala,disponible):
                                                 password='1234qwer#')
         cursor = connection.cursor()
         # update the estado of the sala to false (eliminada)
-        consulta = "UPDATE salas SET estado = false WHERE id_sala = %s"
-        cursor.execute(consulta, (id,))
+        consulta = "UPDATE salas SET estado = 0 WHERE id_sala = %s"
+        cursor.execute(consulta, (id_sala,))
+        # commit the changes to the database
         connection.commit()
         cursor.close()
         connection.close()
@@ -22,3 +23,4 @@ def eliminarSala(id_sala,disponible):
         print("La sala no se puede eliminar porque tiene reservas activas")
         return False
     return True
+eliminarSala(1,True)
