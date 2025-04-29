@@ -9,4 +9,4 @@ def disponibilidadSala(id, fecha):
                                          password='1234pwc')
     cursor = connection.cursor()
     # check if the sala is available (disponible==True) in the date passed as parameter filtring by the id of the sala and one join with the reserva table
-    sql
+    consulta=
